@@ -1,0 +1,91 @@
+.section {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(180deg, #000000 0%, #1a0033 100%);
+	padding: 4rem 0;
+	position: relative;
+	overflow: hidden;
+	perspective: 1000px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 2rem;
+	position: relative;
+	z-index: 1;
+}
+
+.card {
+	background: rgba(138, 0, 246, 0.1);
+	border: 1px solid rgba(138, 0, 246, 0.3);
+	border-radius: 16px;
+	padding: 2rem;
+	backdrop-filter: blur(10px);
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.card:hover {
+	box-shadow: 0 0 30px rgba(138, 0, 246, 0.3);
+}
+
+.cardContent {
+	transform: translateZ(20px);
+}
+
+.card h2 {
+	color: #fff;
+	font-size: 1.8rem;
+	margin: 0 0 1rem 0;
+	background: linear-gradient(90deg, #8a00f6, #a259f7);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform: translateZ(30px);
+}
+
+.card p {
+	color: #fff;
+	font-size: 1.1rem;
+	margin: 0;
+	opacity: 0.8;
+	transform: translateZ(20px);
+}
+
+.gradientBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 200px;
+	background: linear-gradient(180deg, transparent 0%, #000000 100%);
+	pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+	.container {
+		grid-template-columns: 1fr;
+		max-width: 600px;
+	}
+}
+
+@media (max-width: 768px) {
+	.card h2 {
+		font-size: 1.5rem;
+	}
+
+	.card p {
+		font-size: 1rem;
+	}
+
+	.container {
+		padding: 0 1rem;
+	}
+}

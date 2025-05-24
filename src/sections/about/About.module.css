@@ -1,0 +1,172 @@
+.section {
+	min-height: 100vh;
+	padding: 10rem 0;
+}
+
+.about__inner {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 85px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.about__left,
+.about__right {
+	display: flex;
+	flex-direction: column;
+	gap: 120px;
+	flex: 1 1 0;
+	align-items: flex-start;
+	max-width: 30%;
+}
+
+.about__right {
+	align-items: flex-end;
+}
+
+.about__heading {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 16px;
+}
+
+.about__card {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 16px;
+	border-radius: 12px;
+	padding: 18px 20px;
+	color: #fff;
+	max-width: 420px;
+}
+
+.about__card svg {
+	color: #8a00f6 !important;
+	min-width: 28px;
+	min-height: 28px;
+	width: 45px;
+	height: 45px;
+}
+
+.about__text {
+	font-size: 1.1rem;
+	line-height: 1.5;
+	color: #fff;
+}
+
+.about__image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 350px;
+	min-width: 280px;
+	max-width: 400px;
+	width: 100%;
+}
+
+.about__image img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.fade-in {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+		transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 10rem 0;
+		margin-top: 5rem;
+	}
+
+	.about__inner {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.about__left,
+	.about__right {
+		max-width: 100%;
+		align-items: center;
+		gap: 40px;
+	}
+
+	.about__heading {
+		text-align: center;
+		font-size: 1.3rem;
+	}
+
+	.about__card {
+		align-items: center;
+		text-align: center;
+		padding: 15px;
+	}
+
+	.about__card svg {
+		width: 35px;
+		height: 35px;
+	}
+
+	.about__text {
+		font-size: 1rem;
+	}
+
+	.about__image {
+		flex: 0 0 300px;
+		min-width: 250px;
+		max-width: 350px;
+		margin: 20px 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.section {
+		padding: 4rem 0;
+	}
+
+	.about__inner {
+		gap: 30px;
+	}
+
+	.about__left,
+	.about__right {
+		gap: 30px;
+	}
+
+	.about__heading {
+		font-size: 1.2rem;
+	}
+
+	.about__card {
+		padding: 12px;
+	}
+
+	.about__card svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.about__text {
+		font-size: 0.9rem;
+	}
+
+	.about__image {
+		flex: 0 0 250px;
+		min-width: 200px;
+		max-width: 300px;
+	}
+}

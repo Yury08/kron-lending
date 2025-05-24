@@ -1,0 +1,152 @@
+.nav {
+	width: 100%;
+	padding: 20px 40px;
+}
+
+.nav__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__link {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s;
+}
+
+.logo {
+	flex: 0 0 auto;
+}
+
+.navLinks {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	flex: 1;
+}
+
+.navLinks a {
+	color: #fff;
+	text-decoration: none;
+	position: relative;
+	transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+	color: #8b5cf6;
+}
+
+.navLinks a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -4px;
+	left: 0;
+	background-color: #8a00f6;
+	transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+	width: 100%;
+}
+
+.tgLink {
+	flex: 0 0 auto;
+}
+
+.tgLink a {
+	color: #fff;
+	transition: color 0.3s ease;
+}
+
+.tgLink a:hover {
+	color: #8a00f6;
+}
+
+.tgLink.mobile {
+	display: none;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.burger__line {
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	margin: 5px 0;
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	.nav {
+		padding: 15px 20px;
+	}
+
+	.burger {
+		display: block;
+	}
+
+	.burger.active .burger__line:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.burger.active .burger__line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.burger.active .burger__line:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -7px);
+	}
+
+	.navLinks {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 70%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.95);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: right 0.3s ease;
+		z-index: 99;
+	}
+
+	.navLinks.active {
+		right: 0;
+	}
+
+	.navLinks a {
+		font-size: 1.2rem;
+		margin: 1rem 0;
+	}
+
+	.logo img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.tgLink:not(.mobile) {
+		display: none;
+	}
+
+	.tgLink.mobile {
+		display: block;
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.tgLink.mobile svg {
+		width: 32px;
+		height: 32px;
+	}
+}
