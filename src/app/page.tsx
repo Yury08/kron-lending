@@ -1,12 +1,11 @@
 'use client'
 
 import Nav from '@/components/nav/Nav'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import ScrollAnimation3D from '@/components/scroll-animation/ScrollAnimation3D'
-import Slider from '@/components/slider/Slider'
 import About from '@/sections/about/About'
 import Contact from '@/sections/contact/Contact'
 import Roadmap from '@/sections/roadmap/Roadmap'
@@ -36,20 +35,17 @@ export default function Home() {
 			<div className='container'>
 				<Nav />
 				<div className='herosection'>
-					<div className='herosection__maincontent'>
-						<div className='herosection__heading'>
-							<h2>
-								{displayText}
-								<span className='cursor'></span>
-							</h2>
-							<button>
-								<Link href='#beta'>
-									<p>BETA</p>
-								</Link>
-							</button>
-						</div>
+					<div className='herosection__heading'>
+						<h2>
+							{displayText}
+							<span className='cursor'></span>
+						</h2>
+						<button>
+							<Link href='#beta'>
+								<p>BETA</p>
+							</Link>
+						</button>
 					</div>
-					<Slider />
 				</div>
 			</div>
 			<main>
